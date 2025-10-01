@@ -1,5 +1,5 @@
 /*
- * *** YOUR NAME GOES HERE / YOUR SECTION NUMBER ***
+ * *** Evey Kallmeyer / COMP 272/400C - 002 ***
  *
  * This java file contains several simple tree problems that need to be
  * codified. These routines  must use the TreeMap and TreeSet library
@@ -21,13 +21,19 @@ public class TreeProblems {
   
   public static Set<Integer> different(Set<Integer> setA, Set<Integer> setB) {
 
-    // INSERT CODE HERE - DO NOT FORGET TO PLACE YOUR NAME ABOVE
-    //
-    // This can be done numerous ways, but once such will only that
-    // *several* lines of code. Hint: create two temporary TreeSets and utilize the
-    // methods retainAll(), addAll(), and removeAll(). But in the end, get something to work.
+    // Copy setA and setB into a combined set
+    TreeSet<Integer> result = new TreeSet<>(setA);
+    result.addAll(setB);
 
-    return setA;
+    // Find all elements that overlap between setA and setB, and copy them into their own set
+    TreeSet<Integer> overlappingIntergers = new TreeSet<>(setA);
+    overlappingIngtegers.retainAll(setB);
+
+    // From the result set, remove all the values in the overlappingIntegers set
+    result.removeAll(overlappingIntegers);
+
+    // return the outlier integers
+    return result;
   }
 
 
