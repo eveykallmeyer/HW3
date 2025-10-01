@@ -26,7 +26,7 @@ public class TreeProblems {
     result.addAll(setB);
 
     // Find all elements that overlap between setA and setB, and copy them into their own set
-    TreeSet<Integer> overlappingIntergers = new TreeSet<>(setA);
+    TreeSet<Integer> overlappingIntegers = new TreeSet<>(setA);
     overlappingIngtegers.retainAll(setB);
 
     // From the result set, remove all the values in the overlappingIntegers set
@@ -46,9 +46,13 @@ public class TreeProblems {
 
   public static void removeEven(Map<Integer, String> treeMap) {
 
-    // INSERT CODE HERE.
-
-    return;
+    Iterator<Integer> iterator = treeMap.keySet().iterator();
+    while (iterator.hasNext()) {
+      int key = iterator.next();
+      if (key % 2 == 0) {
+        iterator.remove();
+      }
+    }
   }
 
 
@@ -61,9 +65,23 @@ public class TreeProblems {
 
   public boolean treesEqual(Map<Integer, String> tree1,Map<Integer, String> tree2 ) {
 
-    // INSERT CODE HERE
+    if (tree1.size() != tree2.size()) {
+      return false;
+    }
 
-    return false;
+    for (Map.Entry<Integer, String> entry : tree1.entrySet()) {
+      
+      Integer key = entry.getKey();
+      String value = entry.getValue();
+      
+      if (!tree2.containsKey(key)) {
+        return false;
+      } else if (!Objects.equals(tree2.get(key), value)) {
+        return false;
+      }
+    }
+
+    return true
 
   }
 
