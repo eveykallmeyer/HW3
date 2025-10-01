@@ -27,7 +27,7 @@ public class TreeProblems {
 
     // Find all elements that overlap between setA and setB, and copy them into their own set
     TreeSet<Integer> overlappingIntegers = new TreeSet<>(setA);
-    overlappingIngtegers.retainAll(setB);
+    overlappingIntegers.retainAll(setB);
 
     // From the result set, remove all the values in the overlappingIntegers set
     result.removeAll(overlappingIntegers);
@@ -89,7 +89,7 @@ public class TreeProblems {
     }
 
     // Return true if trees are equal
-    return true
+    return true;
 
   }
 
